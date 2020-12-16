@@ -20,5 +20,5 @@ app.listen(PORT, () => {
     console.log('sever', PORT);
 })
 
-exports.api = functions.https.onRequest(app);
+//exports.api = functions.https.onRequest(app);
 
