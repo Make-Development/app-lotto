@@ -1,8 +1,8 @@
 {
-    "name": "lotto",
-    "short_name": "lotto",
-    "description": "Progressive Web App ",
-    "start_url": "/api/",
+    "name": "Lotto",
+    "short_name": "Lotto",
+    "description": "",
+    "start_url": "/",
     "display": "fullscreen",
     "theme_color": "#764ABC",
     "background_color": "#764ABC"

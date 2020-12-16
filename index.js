@@ -6,18 +6,18 @@ const path = require('path');
 
 app.use(express.static(path.join(__dirname, '/app/assets')));
 
-app.get('/s', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.sendFile(path.join(__dirname + '/view/login.html'));
 });
 
-// app.get('/auth', (req, res, next) => {
-//     res.sendFile(path.join(__dirname + '/view/auth.html'));
-// });
+app.get('/auth', (req, res, next) => {
+    res.sendFile(path.join(__dirname + '/view/auth.html'));
+});
 
 // require('./app/routes/index.routes')(app);
-app.get('/', (req, res) => {
-    res.json({result:"ok",data:[1,2,3,4,5]});
-});
+// app.get('/', (req, res) => {
+//     res.json({result:"ok",data:[1,2,3,4,5]});
+// });
 
 app.listen(PORT, () => {
     console.log('sever', PORT);
