@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="js/pwa.webmanifest" />
+    <link rel="stylesheet" type="text/css" href="css/style-main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://colorlib.com/etc/lf/Login_v2/fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: Poppins-Regular;
+        src: url("font/Poppins-Bold.ttf");
+      }
+
+      @font-face {
+        font-family: Poppins-Medium;
+        src: url("font/Poppins-Medium.ttf");
+      }
+
+      @font-face {
+        font-family: Poppins-Bold;
+        src: url("font/Poppins-Bold.ttf");
+      }
+
+      @font-face {
+        font-family: Poppins-SemiBold;
+        src: url("font/Poppins-SemiBold.ttf");
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ah">
+      <div class="ah-panel">
+        <div class="ah-wrap">
+          <form class="validate-form">
+            <div class="pin">
+              <div class="pin-title mb-3">Lotto.</div>
+              <div class="pin-code" data-pin-bind="true">
+                <!-- <span class="items"></span>
+                <span class="items"></span>
+                <span class="items"></span>
+                <span class="items"></span> -->
+              </div>
+              <hr class="mx-5" />
+              <div class="pin-number">
+                <div class="group-items">
+                  <button type="button" class="btn items" data-pin="1">1</button>
+                  <button type="button" class="btn items" data-pin="2">2</button>
+                  <button type="button" class="btn items" data-pin="3">3</button>
+                </div>
+                <div class="group-items">
+                  <button type="button" class="btn items" data-pin="4">4</button>
+                  <button type="button" class="btn items" data-pin="5">5</button>
+                  <button type="button" class="btn items" data-pin="6">6</button>
+                </div>
+                <div class="group-items">
+                  <button type="button" class="btn items" data-pin="7">7</button>
+                  <button type="button" class="btn items" data-pin="8">8</button>
+                  <button type="button" class="btn items" data-pin="9">9</button>
+                </div>
+                <div class="group-items">
+                  <button type="button" class="btn items" data-back="true"><i class="fa fa-chevron-left"></i></button> 
+                  <button type="button" class="btn items" data-pin="0">0</button> 
+                  <button type="button" class="btn items" data-remove="true"><i class="fa fa-times"></i> </button>
+                </div>
+              </div>
+            </div>
+           
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/jquery.plugin.js"></script>
+    <script src="js/script.main.js"></script>
+
+    <script type="text/javascript">
+
+          localStorage.removeItem("pinCode");
+
+          $('button[data-pin]').on('click',function (e) {  
+            e.preventDefault();
+
+            pin.push({
+              th:$(this),
+              bind:$('[data-pin-bind="true"]')
+            });
+
+          });
+
+          pin.load({
+            bind:$('[data-pin-bind="true"]')
+          })
+
+    </script>
+  </body>
+</html>

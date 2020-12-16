@@ -1,0 +1,9 @@
+{
+    "name": "lotto",
+    "short_name": "lotto",
+    "description": "Progressive Web App ",
+    "start_url": "/api/",
+    "display": "fullscreen",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+  }
