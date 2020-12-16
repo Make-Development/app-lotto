@@ -1,8 +1,7 @@
-const functions = require('firebase-functions');
+
 const express = require('express')
 const PORT = process.env.PORT || 3000;
 const app = express();
-const path = require('path');
 
 // app.use(express.static(path.join(__dirname, '/app/assets')));
 
