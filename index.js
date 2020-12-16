@@ -3,11 +3,11 @@ const express = require('express')
 const PORT = process.env.PORT || 3000;
 const app = express();
 
-// app.use(express.static(path.join(__dirname, '/app/assets')));
+app.use(express.static(path.join(__dirname, '/app/assets')));
 
-// app.get('/', (req, res, next) => {
-//     res.sendFile(path.join(__dirname + '/view/login.html'));
-// });
+app.get('/s', (req, res, next) => {
+    res.sendFile(path.join(__dirname + '/view/login.html'));
+});
 
 // app.get('/auth', (req, res, next) => {
 //     res.sendFile(path.join(__dirname + '/view/auth.html'));
