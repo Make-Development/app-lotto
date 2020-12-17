@@ -1,0 +1,9 @@
+{
+    "apiKey": "AIzaSyABoMq6DUbwMulo8QswIGxl92Cfs1rxH-Y",
+    "authDomain": "app-lottos.firebaseapp.com",
+    "databaseURL": "https://app-lottos.firebaseio.com",
+    "projectId": "app-lottos",
+    "storageBucket": "app-lottos.appspot.com",
+    "messagingSenderId": "184031062806",
+    "appId": "1:184031062806:web:4a4201063c3a7e37843e37"
+}

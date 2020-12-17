@@ -5,38 +5,34 @@ const express = require('express');
 const PORT = process.env.PORT || 3000;
 const app = express();
 const path = require('path');
+const cors = require("cors");
 
+app.use(cors());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/app/assets')));
-app.use(bodyParser.urlencoded({extend:true}));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-app.set('views', __dirname + '/view/');
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.get('/', function(req, res){
-    res.render('login.html');
-});
+app.set('view engine', 'ejs');
 
-
+// - Auth
 require('./app/routes/auth.routes')(app);
 
-// app.get('/', (req, res) => {
-//     res.render(path.join(__dirname + '/view/login.html'), { name: "Lotto" });
+// app.get('/', function (req, res) {
+//     res.render('pages/index', { name: "Lotto." });
 // });
 
-// app.get('/auth', (req, res, next) => {
-//     res.sendFile(path.join(__dirname + '/view/auth.html'));
-// });
+// var db = firebase.database();
+// var ref = db.ref("/Lotto");
 
 
-// require('./app/routes/index.routes')(app);
-// app.get('/', (req, res) => {
-//     res.json({result:"ok",data:[1,2,3,4,5]});
+// ref.once("value", function (snapshot) {
+//     var data = snapshot.val();   //Data is in JSON format.
+//     console.log(data);
 // });
 
 app.listen(PORT, () => {
     console.log('sever', PORT);
 })
 
-//exports.api = functions.https.onRequest(app);
 

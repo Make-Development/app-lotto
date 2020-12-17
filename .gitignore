@@ -6,3 +6,9 @@ gulpfile.js
 
 # - 
 package-lock.json
+
+# -
+backup.txt
+
+# -
+view/

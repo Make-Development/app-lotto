@@ -1,0 +1,50 @@
+<html>
+<%- include('../master/head'); %>
+
+    <body>
+
+        <div class="limiter">
+            <div class="container-login100">
+                <div class="wrap-login100">
+                    <form class="login100-form validate-form">
+                        <span class="login100-form-title p-b-26">
+                            <%= name %>
+                        </span>
+
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="text" name="User" />
+                            <span class="focus-input100" data-placeholder="Username"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Enter Phone">
+                            <input class="input100" type="tel" name="Phones" />
+                            <span class="focus-input100" data-placeholder="Phone"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Enter Password">
+                            <input class="input100" type="password" name="password" />
+                            <span class="focus-input100" data-placeholder="Password"></span>
+                        </div>
+                        <div class="container-login100-form-btn">
+                            <div class="wrap-login100-form-btn">
+                                <div class="login100-form-bgbtn"></div>
+                                <button type="submit" class="login100-form-btn">Sign Up</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <%- include('../master/footer'); %>
+            <script type="text/javascript">
+            // var ss = '<%= data %>'
+            //     console.log('[' + ss.replace('&#34;','"').replace(':&#34;;',':"') + ']')
+            </script>
+
+    </body>
+
+</html>
