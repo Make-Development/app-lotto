@@ -8,9 +8,16 @@ module.exports = function (app) {
         next();
     });
 
-    app.get("/api/:name",function(req, res){
+    app.get("/api",function(req, res){
         res.send([{
             "name":req.params.name
         }]);
     });
+
+    app.get("/api/v1",function(req, res){
+        res.send([{
+            "name":"req.params.name"
+        }]);
+    });
+    
 };
