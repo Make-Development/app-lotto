@@ -43,6 +43,14 @@
                     });
                 });
 
+                $(function () {
+                    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+                    if (/Mobi/.test(navigator.userAgent)) {
+                    } else {
+                        window.location.href = location.origin + "/404";
+                    }
+                });
             </script>
 
     </body>

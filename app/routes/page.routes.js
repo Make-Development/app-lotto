@@ -33,6 +33,10 @@ module.exports = function (app) {
         res.render('pages/order');
     });
 
+    app.get("/404", function (req, res) {
+        res.render('pages/404');
+    });
+
 
 
 };
