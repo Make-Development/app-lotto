@@ -4,9 +4,9 @@
     <body class="body__profile">
 
         <div class="card lt-profile border-0">
-            <div class="lt-profile__head p-3">
-                <div class="lt-profile__head--left">
-                    <i class="fa fa-chevron-left "></i>
+            <div class="lt-profile__head p-3" style=" z-index: 10;">
+                <div class="lt-profile__head--left" data-back="true">
+                    <i class="fa fa-chevron-left " ></i>
                 </div>
             </div>
             <div class="lt-profile__head center">
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="lt-profile__banner">
-                <label >
+                <label>
                     _ _ _ _ _ _ _ _
                 </label>
             </div>
@@ -41,10 +41,10 @@
                             </div>
                             <div class="group-items">
                                 <button type="button" class="btn items" data-back="true">
-                                    <i class="fa fa-chevron-left"></i></button>
+                                    </button>
                                 <button type="button" class="btn items" data-pin="0">0</button>
-                                <button type="button" class="btn items" data-remove="true"><i
-                                        class="fa fa-times"></i> </button>
+                                <button type="button" class="btn items" data-remove="true">
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,14 @@
     <%- include('../master/footer'); %>
         <script type="text/javascript">
 
+            $(document).ready(function () {
 
+
+                $('[data-back="true"]').click(function (e) {
+                    e.preventDefault();
+                    window.location.href = location.origin + "/profile";
+                })
+            });
 
         </script>
 
