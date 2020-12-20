@@ -1,5 +1,5 @@
 {
-  "name": "test-firebase-nodejs",
+  "name": "app-lotoo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,11 +24,13 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "body-parser": "^1.19.0",
+    "connect-redis": "^5.0.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "firebase": "^8.2.0",
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.13.0",
@@ -39,9 +41,11 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-uglify": "^3.0.2",
+    "jsonwebtoken": "^8.5.1",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.4",
     "postcss": "^8.2.1",
+    "redis": "^3.0.2",
     "url": "^0.11.0"
   },
   "devDependencies": {

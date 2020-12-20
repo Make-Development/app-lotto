@@ -1,0 +1,80 @@
+<html>
+<%- include('../master/head'); %>
+
+    <body>
+
+        <div class="ah">
+            <div class="ah-panel">
+                <div class="ah-wrap">
+                    <form class="validate-form">
+                        <div class="pin">
+                            <div class="pin-title mb-3">Lotto.</div>
+                            <div class="pin-code" data-pin-bind="true">
+                            </div>
+                            <hr class="mx-5" />
+                            <div class="pin-number">
+                                <div class="group-items">
+                                    <button type="button" class="btn items" data-pin="1">1</button>
+                                    <button type="button" class="btn items" data-pin="2">2</button>
+                                    <button type="button" class="btn items" data-pin="3">3</button>
+                                </div>
+                                <div class="group-items">
+                                    <button type="button" class="btn items" data-pin="4">4</button>
+                                    <button type="button" class="btn items" data-pin="5">5</button>
+                                    <button type="button" class="btn items" data-pin="6">6</button>
+                                </div>
+                                <div class="group-items">
+                                    <button type="button" class="btn items" data-pin="7">7</button>
+                                    <button type="button" class="btn items" data-pin="8">8</button>
+                                    <button type="button" class="btn items" data-pin="9">9</button>
+                                </div>
+                                <div class="group-items">
+                                    <button type="button" class="btn items" data-back="true">
+                                        <i class="fa fa-chevron-left"></i></button>
+                                    <button type="button" class="btn items" data-pin="0">0</button>
+                                    <button type="button" class="btn items" data-remove="true"><i
+                                            class="fa fa-times"></i> </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+    </body>
+    <%- include('../master/footer'); %>
+        <script type="text/javascript">
+
+            localStorage.removeItem("pinCode");
+
+            $('button[data-pin]').on('click', function (e) {
+                e.preventDefault();
+
+                pin.push({
+                    th: $(this),
+                    bind: $('[data-pin-bind="true"]')
+                });
+
+            });
+
+            $('button[data-remove="true"]').on('click', function (e) {
+                e.preventDefault();
+                pin.remove({
+                    th: $(this),
+                    bind: $('[data-pin-bind="true"]')
+                });
+            });
+
+            pin.load({
+                bind: $('[data-pin-bind="true"]')
+            })
+
+
+        </script>
+
+</html>

@@ -10,15 +10,8 @@ firebase.initializeApp({
     authDomain: Account.authDomain,
 });
 
-exports.view = function (_) {
-
+exports.get = function (_) {
     var db = firebase.database();
-    // var ref = db.ref(_);
-    // var ss=[]; 
-    // ss = ref.once("value", function (snapshot) {
-    //     var data = snapshot.val();   //Data is in JSON format.
-    //     return data
-    // });
     return db.ref(_);
 };
 
