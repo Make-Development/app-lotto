@@ -13,10 +13,13 @@ module.exports = function (app) {
     });
 
 
-    app.get("/login", function (req, res) {
+    app.get("/", function (req, res) {
         res.render('pages/index', { name: "Lotto." });
     });
 
+    app.get("/register", function (req, res) {
+        res.render('pages/register', { name: "Lotto." });
+    });
 
     app.get("/pincode", function (req, res) {
         res.render('pages/pincode', { name: "Lotto." });

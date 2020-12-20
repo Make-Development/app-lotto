@@ -11,7 +11,10 @@
                             <%= name %>
                         </span>
 
-
+                        <div class="wrap-input100 validate-input">
+                            <input class="input100" type="text" name="User" />
+                            <span class="focus-input100" data-placeholder="Username"></span>
+                        </div>
                         <div class="wrap-input100 validate-input" data-validate="Enter Phone">
                             <input class="input100" type="tel" name="Phones" />
                             <span class="focus-input100" data-placeholder="Phone"></span>
@@ -23,7 +26,7 @@
                         <div class="container-login100-form-btn">
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
-                                <button type="submit" class="login100-form-btn">Login</button>
+                                <button type="submit" class="login100-form-btn">Sign Up</button>
                             </div>
                         </div>
                     </form>
@@ -32,16 +35,10 @@
         </div>
 
 
-        <%- include('../master/footer'); %>
+              <%- include('../master/footer'); %>
             <script type="text/javascript">
 
-                $(document).ready(function () {
-                    $('button[type="submit"]').click(function (e) {
-                        e.preventDefault();
-                        window.location.href = location.origin + "/pincode";
-                        //service.Login($('form input'))
-                    });
-                });
+                 
 
             </script>
 
