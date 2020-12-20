@@ -23,8 +23,13 @@ module.exports = function (app) {
     });
 
     app.get("/profile", function (req, res) {
-        res.render('pages/profile', { name: "Lotto." });
+        res.render('pages/profile');
     });
+
+    app.get("/order", function (req, res) {
+        res.render('pages/order');
+    });
+
 
 
 };
