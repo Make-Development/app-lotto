@@ -1,0 +1,81 @@
+<html>
+<%- include('../master/head'); %>
+
+    <body class="body__login">
+
+        <div class="lt-login">
+            <div class="lt-login__panel">
+
+                <div class="lt-login__head">
+                    <span>
+                        <%= name %>
+                    </span>
+                </div>
+                <br>
+                <div class="lt-login__body">
+                    <div class="lt-wrap">
+                        <form class="lt-validate__form">
+                            <div class="lt-wrap__input lt-validate__input" data-validate="Enter Phone">
+                                <input class="lt-input" type="tel" name="Phones" />
+                                <span class="lt-focus" data-placeholder="Phone"></span>
+                            </div>
+                            <div class="lt-wrap__input lt-validate__input" data-validate="Enter Password">
+                                <input class="lt-input" type="password" name="password" />
+                                <span class="lt-focus" data-placeholder="Password"></span>
+                            </div>
+                            <div class="lt-wrap__container">
+                                <div class="lt-wrap__form">
+                                    <div class="lt-wrap__form--bgbtn"></div>
+                                    <button type="submit" class="lt-wrap__form--btn">Login</button>
+                                </div>
+                                <div class="lt-wrap__form">
+                                    <div class="lt-wrap__form--bgregister"></div>
+                                    <a class="lt-wrap__form--register" data-register="true">Register</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../master/footer'); %>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script type="text/javascript">
+
+                //login.load()
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: 'You will not be able to recover this imaginary file!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes, delete it!',
+                    cancelButtonText: 'No, keep it'
+                }).then((result) => {
+                    if (result.value) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your imaginary file has been deleted.',
+                            'success'
+                        )
+                        // For more information about handling dismissals please visit
+                        // https://sweetalert2.github.io/#handling-dismissals
+                    } else if (result.dismiss === Swal.DismissReason.cancel) {
+                        Swal.fire(
+                            'Cancelled',
+                            'Your imaginary file is safe :)',
+                            'error'
+                        )
+                    }
+                })
+                $('[data-register="true"]').click(function (e) {
+                    e.preventDefault();
+                    register.go({
+                        ele: window
+                    })
+                });
+            </script>
+
+    </body>
+
+</html>

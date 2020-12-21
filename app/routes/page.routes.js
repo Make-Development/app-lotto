@@ -14,7 +14,7 @@ module.exports = function (app) {
 
 
     app.get("/", function (req, res) {
-        res.render('pages/index', { name: "Lotto." });
+        res.render('pages/login', { name: "Lotto." });
     });
 
     app.get("/register", function (req, res) {
