@@ -1,9 +1,48 @@
 <html>
 <%- include('../master/head'); %>
 
-    <body>
+    <body class="lt-body__pincode">
 
-        <div class="ah">
+        <div class="lt-pincode">
+            
+            <div class="lt-pincode__body">
+                <div class="lt-pin">
+                    <div class="lt-pin__title">
+                            <h2><%= name %></h2>
+                            <small>Confirm Pincode</small>
+                    </div>
+                    <div class="lt-pin__code" data-pin-bind="true">
+                    </div>
+                  
+                    <div class="lt-pin__number">
+                        <div class="group-items">
+                            <button type="button" class="btn items " data-pin="1">1</button>
+                            <button type="button" class="btn items" data-pin="2">2</button>
+                            <button type="button" class="btn items" data-pin="3">3</button>
+                        </div>
+                        <div class="group-items">
+                            <button type="button" class="btn items" data-pin="4">4</button>
+                            <button type="button" class="btn items" data-pin="5">5</button>
+                            <button type="button" class="btn items" data-pin="6">6</button>
+                        </div>
+                        <div class="group-items">
+                            <button type="button" class="btn items" data-pin="7">7</button>
+                            <button type="button" class="btn items" data-pin="8">8</button>
+                            <button type="button" class="btn items" data-pin="9">9</button>
+                        </div>
+                        <div class="group-items">
+                            <button type="button" class="btn items" data-back="true">
+                                <i class="fa fa-chevron-left"></i></button>
+                            <button type="button" class="btn items" data-pin="0">0</button>
+                            <button type="button" class="btn items" data-remove="true"><i
+                                    class="fa fa-times"></i> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ah d-none">
             <div class="ah-panel">
                 <div class="ah-wrap">
                     <form class="validate-form">
@@ -43,7 +82,6 @@
             </div>
         </div>
 
-        
 
 
     </body>
