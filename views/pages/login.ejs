@@ -14,9 +14,9 @@
                
                 <div class="lt-login__body">
                     <div class="lt-wrap">
-                        <form class="lt-validate__form">
+                        <form class="lt-validate__form" autocomplete="off">
                             <div class="lt-wrap__input lt-validate__input" data-validate="Enter Phone">
-                                <input class="lt-input" type="tel" name="Phones" />
+                                <input class="lt-input" type="tel" name="phones" />
                                 <span class="lt-focus" data-placeholder="Phone"></span>
                             </div>
                             <div class="lt-wrap__input lt-validate__input" data-validate="Enter Password">
@@ -26,7 +26,7 @@
                             <div class="lt-wrap__container">
                                 <div class="lt-wrap__form">
                                     <div class="lt-wrap__form--bgbtn"></div>
-                                    <button type="submit" class="lt-wrap__form--btn">Login</button>
+                                    <button type="submit" class="lt-wrap__form--btn" data-submit="true">Login</button>
                                 </div>
                                 <div class="lt-wrap__form">
                                     <div class="lt-wrap__form--bgregister"></div>
@@ -42,7 +42,15 @@
         <%- include('../master/footer'); %>
           <script type="text/javascript">
 
-                //login.load()
+               login.load()
+               
+                $('form').submit(function (e) {
+                    e.preventDefault();
+                    login.submit({
+                        wn:window,
+                        ele:$(this)
+                    });
+                });
 
                 $('[data-register="true"]').click(function (e) {
                     e.preventDefault();
@@ -50,6 +58,7 @@
                         ele: window
                     })
                 });
+
             </script>
 
     </body>

@@ -23,6 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.1.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-redis": "^5.0.0",
     "cors": "^2.8.5",
@@ -34,6 +35,7 @@
     "firebase": "^8.2.0",
     "firebase-admin": "^9.4.2",
     "firebase-functions": "^3.13.0",
+    "firebase-query-gator": "^1.0.20",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^9.0.0",
@@ -45,6 +47,7 @@
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.4",
     "postcss": "^8.2.1",
+    "querybase": "^0.6.0",
     "redis": "^3.0.2",
     "url": "^0.11.0"
   },

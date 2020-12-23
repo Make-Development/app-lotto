@@ -1,58 +1,66 @@
 <html>
 <%- include('../master/head'); %>
-<body class="lt-body__register">
 
-    <div class="lt-register">
-        <div class="lt-register__panel">
+    <body class="lt-body__register">
 
-            <div class="lt-register__head">
-                <span>
-                    <%= name %>
-                </span>
-            </div>
-            <br>
-            <div class="lt-register__body">
-                <div class="lt-wrap">
-                    <form class="lt-validate__form">
-                        <div class="lt-wrap__input lt-validate__input" data-validate="Enter Phone">
-                            <input class="lt-input"  type="tel" name="Phones" />
-                            <span class="lt-focus" data-placeholder="Phone"></span>
-                        </div>
-                        <div class="lt-wrap__input lt-validate__input" data-validate="Enter Email">
-                            <input class="lt-input" type="email" name="email" />
-                            <span class="lt-focus" data-placeholder="Email"></span>
-                        </div>
-                        <div class="lt-wrap__input lt-validate__input" data-validate="Enter Password">
-                            <input class="lt-input" type="password" name="password" />
-                            <span class="lt-focus" data-placeholder="Password"></span>
-                        </div>
-                        <div class="lt-wrap__container">
-                            <div class="lt-wrap__form">
-                                <div class="lt-wrap__form--bgbtn"></div>
-                                <button type="submit" class="lt-wrap__form--btn">Register</button>
+        <div class="lt-register">
+            <div class="lt-register__panel">
+
+                <div class="lt-register__head">
+                    <span>
+                        <%= name %>
+                    </span>
+                </div>
+                <br>
+                <div class="lt-register__body">
+                    <div class="lt-wrap">
+                        <form class="lt-validate__form" autocomplete="off">
+                            <div class="lt-wrap__input lt-validate__input" data-validate="Enter Name">
+                                <input class="lt-input" type="text" name="username" />
+                                <span class="lt-focus" data-placeholder="Username"></span>
                             </div>
-                            <div class="lt-wrap__form">
-                                <div class="lt-wrap__form--bgregister"></div>
-                                <a  class="lt-wrap__form--register" data-back="true" >ถอยหลัง</a>
+                            <div class="lt-wrap__input lt-validate__input" data-validate="Enter Phone">
+                                <input class="lt-input" type="tel" name="phone" />
+                                <span class="lt-focus" data-placeholder="Phone"></span>
                             </div>
-                        </div>
-                    </form>
+                            <div class="lt-wrap__input lt-validate__input" data-validate="Enter Password">
+                                <input class="lt-input" type="password" name="password" />
+                                <span class="lt-focus" data-placeholder="Password"></span>
+                            </div>
+                            <div class="lt-wrap__container">
+                                <div class="lt-wrap__form">
+                                    <div class="lt-wrap__form--bgbtn"></div>
+                                    <button type="submit" class="lt-wrap__form--btn">Register</button>
+                                </div>
+                                <div class="lt-wrap__form">
+                                    <div class="lt-wrap__form--bgregister"></div>
+                                    <a class="lt-wrap__form--register" data-back="true">ถอยหลัง</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <%- include('../master/footer'); %>
-        <script type="text/javascript">
+        <%- include('../master/footer'); %>
+           
+            <script type="text/javascript">
 
-            $('[data-back="true"]').click(function(e){
-                register.back({
-                    ele:window
-                })
-            });
+                $('[data-back="true"]').click(function (e) {
+                    register.back({
+                        ele: window
+                    })
+                });
 
-        </script>
+                $('form').submit(function (e) {
+                    e.preventDefault();
+                    register.submit($(this));
+                   
+                });
 
-</body>
+            </script>
+
+    </body>
 
 </html>

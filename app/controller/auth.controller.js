@@ -1,48 +1,98 @@
 
-const auth = require('../models/firebase');
+const base = require('../models/firebase');
 
-var jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
+const bcrypt = require('bcryptjs');
+const key = require('../config/key.js');
+
+// const { auth } = require('firebase-functions');
+
 exports.signup = (req, res) => {
 
-    // const data = auth.view("/auth")
     const data = {
         username: req.body.username,
-        email: req.body.email,
-        password: req.body.password
+        phone: req.body.phone,
+        password: bcrypt.hashSync(req.body.password, 4),
+        role: "user",
+        status: 1
     }
 
-  
+    const query = base.query("/auth").where("phone", data.phone);
 
-    // const ref = auth.view("/auth")
+    query.execute().then((result) => {
 
-    // ref.once("value", function (snapshot) {
-    //     //     var data = snapshot.val();   //Data is in JSON format.
-    //     //     return data
-    //     // });
-    //     res.status(200).send(snapshot.val());
-    // });
+        if (result.d.length == 0) {
+            var ref = base.ref("/auth")
+
+            ref.push(data);
+
+            res.status(200).json({
+                status: true
+            });
+        } else {
+            res.status(200).json({
+                status: false
+            });
+        }
+    })
+
 };
 
-exports.show = async (req, res) => {
-    // const wordsSnapshot = await auth.get("/auth").once('value');
-    // console.log(wordsSnapshot);
+exports.signin = (req, res) => {
 
-    // const ref = auth.get("/auth")
-    // ref.push({
-    //     id: 22,
-    //     name: "Jane Doe",
-    //     email: "jane@doe.com",
-    //     website: "https://jane.foo.bar"
-    // });
-    // var reads = [];
-    // const s = auth.get("/auth/-MOqa9YH0Pi16-5HNVjg").once("value", function (snapshot) {
-    //     reads = JSON.stringify(snapshot.val())
-    //     return Promise.all(reads);
+    const data = {
+        phone: req.body.phone,
+        password: bcrypt.hashSync(req.body.password, 4)
+    }
 
-    //     // var ss = snapshot.val();
-    //     // console.log(ss);
-    //     // res.render('pages/index', { name: "Lotto.", data: JSON.stringify(ss) });
-    // });
-    // console.log(JSON.stringify(s))
-    // res.status(200).send(s);
+    const query = base.query("/auth")
+        .where("phone", data.phone)
+
+    query.execute().then((result) => {
+        if (result.d.length > 0) {
+            let res_ = result.d[0].v;
+            // console.log("dd",result.d[0].v)
+            var passwordIsValid = bcrypt.compareSync(
+                req.body.password,
+                res_.password
+            );
+            if (!passwordIsValid) {
+                res.status(200).json({
+                    status: false
+                });
+            } else {
+                // var token = jwt.sign({ foo: data.phone}, key.jwt.secret,  { algorithm: 'RS256' } );
+                var token = jwt.sign({ foo: data.phone }, key.jwt.secret);
+                res.setHeader('x-access-token', token)
+                res.cookie('token', token, {
+                    expires  : new Date(Date.now() + (3600 * 60 * 24) * (24 * 5)),
+                    httpOnly : false
+                  });
+                res.status(200).json({
+                    status: true
+                });
+            }
+        }
+    });
+    // var passwordIsValid = bcrypt.compareSync(
+    //     req.body.password,
+    //     user.password
+    // );
+
+};
+
+exports.token =(req,res) => {
+    // var decoded = jwt.verify(req.body.token,  key.jwt.secret);
+    jwt.verify(req.body.token, key.jwt.secret, function(err, decoded) {
+        if (err) {
+            res.status(200).json({
+                status: false
+            });
+        } else {
+            res.status(200).json({
+                status: true
+            });
+        }
+      });
+   
 };

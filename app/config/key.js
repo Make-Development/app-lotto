@@ -4,5 +4,8 @@ module.exports = {
         pass:'lotto@secrets',
         host:'127.0.0.1',
         port:'3000'
+    },
+    jwt : {
+        secret:'key-lotto-jwt'
     }
 }
