@@ -4,7 +4,7 @@
   "description": "",
   "main": "service.js",
   "scripts": {
-    "start": "node index.js start -p $PORT",
+    "start": "node service.js start -p $PORT",
     "go": "clear && nodemon service.js",
     "heroku-postbuild": "npm run build"
   },
