@@ -36,21 +36,7 @@
   <script src="js/script.main.js"></script>
 
   <script>
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
-        if ("serviceWorker" in navigator && navigator.onLine) {
-          navigator.serviceWorker.register("js/service-worker.js").then(
-            (reg) => { },
-            (err) => {
-              console.error("Service worker not registered -->", err);
-            }
-          );
-        }
-      },
-
-      false
-    );
+    
 
     $(document).ready(function () {
       $('button[type="submit"]').click(function (e) {

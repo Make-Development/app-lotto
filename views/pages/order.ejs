@@ -2,11 +2,12 @@
 <%- include('../master/head'); %>
 
     <body class="body__profile">
-
+        <div class="se-pre-con"></div>
         <div class="card lt-profile border-0">
-            <div class="lt-profile__head p-3" style=" z-index: 10;">
-                <div class="lt-profile__head--left" data-back="true">
+            <div class="lt-profile__head px-3 pt-4" style=" z-index: 10;">
+                <div class="lt-profile__head--left px-2" data-back="true">
                     <i class="fa fa-chevron-left "></i>
+                    <small class="ml-3">  Order</small>
                 </div>
             </div>
             <div class="lt-profile__head center">
@@ -23,37 +24,7 @@
                 </label>
             </div>
             <div class="lt-profile__body ">
-                <form class="validate-form">
-                    <div class="pin">
-                        <div class="pin-code">
-                        </div>
-                        <div class="pin-number">
-                            <div class="group-items">
-                                <button type="button" class="btn items" data-pin="1">1</button>
-                                <button type="button" class="btn items" data-pin="2">2</button>
-                                <button type="button" class="btn items" data-pin="3">3</button>
-                            </div>
-                            <div class="group-items">
-                                <button type="button" class="btn items" data-pin="4">4</button>
-                                <button type="button" class="btn items" data-pin="5">5</button>
-                                <button type="button" class="btn items" data-pin="6">6</button>
-                            </div>
-                            <div class="group-items">
-                                <button type="button" class="btn items" data-pin="7">7</button>
-                                <button type="button" class="btn items" data-pin="8">8</button>
-                                <button type="button" class="btn items" data-pin="9">9</button>
-                            </div>
-                            <div class="group-items">
-                                <button type="button" class="btn items" data-back="true">
-                                </button>
-                                <button type="button" class="btn items" data-pin="0">0</button>
-                                <button type="button" class="btn items" data-remove="true"><i class="fa fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
+             
             </div>
         </div>
 
@@ -71,24 +42,6 @@
                     window.location.href = location.origin + "/profile";
                 })
 
-
-                $('button[data-pin]').on('click', function (e) {
-                    e.preventDefault();
-
-                    order.push({
-                        th: $(this),
-                        bind: $('[data-pin-bind="true"]')
-                    });
-
-                });
-
-                $('button[data-remove="true"]').on('click', function (e) {
-                    e.preventDefault();
-                    order.remove({
-                        th: $(this),
-                        bind: $('[data-pin-bind="true"]')
-                    });
-                });
 
             });
 

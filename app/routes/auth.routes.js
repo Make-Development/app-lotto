@@ -15,8 +15,11 @@ module.exports = function (app) {
     });
 
     app.post("/api/token", auth.token);
+
     app.post("/api/signin", auth.signin);
+
     app.post("/api/signup", auth.signup);
+    
     app.get("/api/login", function (req, res) {
         res.render('pages/index', { name: "Lotto." });
     });

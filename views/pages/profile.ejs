@@ -2,20 +2,25 @@
 <%- include('../master/head'); %>
 
     <body class="body__profile">
-
+        <div class="se-pre-con"></div>
         <div class="card lt-profile border-0">
-            <div class="lt-profile__head between">
+            <div class="lt-profile__top right pr-3 pt-3" style=" z-index: 10;">
+                 <a class="btn btn-icon " data-pincode="true">
+                    <i class="fa fa-lock"></i>
+                 </a>
+            </div>
+            <div class="lt-profile__head between" data-profile="true">
 
                 <div class="lt-profile__head--left">
                     <img src="https://images.unsplash.com/photo-1545703549-7bdb1d01b734?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
                         alt="">
                     <div>
-                        <h6>Username</h6>
-                        <small>Discount 45</small>
+                        <h6 data-profile-tag="user">Username</h6>
+                        <small data-profile-tag="discount">Discount 45</small>
                     </div>
                 </div>
                 <div class="lt-profile__head--right d-flex">
-                    <h4>250</h4>
+                    <h4 data-profile-tag="credit">250</h4>
                     <small>Credit</small>
                 </div>
 
@@ -27,7 +32,7 @@
             </div>
             <div class="lt-profile__body">
                 <p>รายงาน</p>
-                <div class="card lt-list">
+                <!-- <div class="card lt-list">
                     <div class="lt-list__body ">
                         <div class="lt-list__body--board">
                             <span>
@@ -94,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
@@ -105,11 +110,20 @@
 
             $(document).ready(function () {
 
-
                 $('[data-order="true"]').click(function (e) {
                     e.preventDefault();
                     window.location.href = location.origin + "/order";
                 })
+
+                $('[data-pincode="true"]').click(function (e) {
+                    e.preventDefault();
+                    window.location.href = location.origin + "/pincode";
+                })
+
+                profile.load({
+                    ele: $('[data-profile="true"]')
+                })
+                
             });
 
         </script>

@@ -2,10 +2,10 @@
   "name": "app-lotoo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "service.js",
   "scripts": {
     "start": "node index.js start -p $PORT",
-    "go": "clear && nodemon index.js",
+    "go": "clear && nodemon service.js",
     "heroku-postbuild": "npm run build"
   },
   "keywords": [

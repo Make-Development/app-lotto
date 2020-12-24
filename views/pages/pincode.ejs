@@ -2,7 +2,7 @@
 <%- include('../master/head'); %>
 
     <body class="lt-body__pincode">
-
+        <div class="se-pre-con"></div>
         <div class="lt-pincode">
             
             <div class="lt-pincode__body">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="group-items">
                             <button type="button" class="btn items" data-back="true">
-                                <i class="fa fa-chevron-left"></i></button>
+                                <i class="fa fa-refresh"></i></button>
                             <button type="button" class="btn items" data-pin="0">0</button>
                             <button type="button" class="btn items" data-remove="true"><i
                                     class="fa fa-times"></i> </button>
@@ -111,6 +111,16 @@
             pin.load({
                 bind: $('[data-pin-bind="true"]')
             })
+
+            $('button[data-back]').on('click', function (e) {
+                e.preventDefault();
+
+                pin.back({
+                    th: $(this),
+                    bind: $('[data-pin-bind="true"]')
+                });
+
+            });
 
 
         </script>
