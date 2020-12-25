@@ -26,6 +26,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "connect-redis": "^5.0.0",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
@@ -49,6 +50,7 @@
     "postcss": "^8.2.1",
     "querybase": "^0.6.0",
     "redis": "^3.0.2",
+    "uniqid": "^5.2.0",
     "url": "^0.11.0"
   },
   "devDependencies": {

@@ -4,7 +4,7 @@ const base = require('../models/firebase');
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcryptjs');
 const key = require('../config/key.js');
-
+const uniqid = require("uniqid");
 // const { auth } = require('firebase-functions');
 
 exports.signup = (req, res) => {
@@ -14,7 +14,12 @@ exports.signup = (req, res) => {
         phone: req.body.phone,
         password: bcrypt.hashSync(req.body.password, 4),
         role: "user",
-        status: 1
+        status: 0,
+        clientid: uniqid(),
+        account: {
+            credit: 0,
+            discount: 0
+        }
     }
 
     const query = base.query("/auth").where("phone", data.phone);
@@ -62,12 +67,12 @@ exports.signin = (req, res) => {
                 });
             } else {
                 // var token = jwt.sign({ foo: data.phone}, key.jwt.secret,  { algorithm: 'RS256' } );
-                var token = jwt.sign({ foo: data.phone }, key.jwt.secret);
+                var token = jwt.sign({ foo: data.phone, clientid: res_.clientid }, key.jwt.secret);
                 res.setHeader('x-access-token', token)
                 res.cookie('token', token, {
-                    expires  : new Date(Date.now() + (3600 * 60 * 24) * (24 * 5)),
-                    httpOnly : false
-                  });
+                    expires: new Date(Date.now() + (3600 * 60 * 24) * (24 * 5)),
+                    httpOnly: false
+                });
                 res.status(200).json({
                     status: true
                 });
@@ -81,9 +86,9 @@ exports.signin = (req, res) => {
 
 };
 
-exports.token =(req,res) => {
+exports.token = (req, res) => {
     // var decoded = jwt.verify(req.body.token,  key.jwt.secret);
-    jwt.verify(req.body.token, key.jwt.secret, function(err, decoded) {
+    jwt.verify(req.body.token, key.jwt.secret, function (err, decoded) {
         if (err) {
             res.status(200).json({
                 status: false
@@ -93,6 +98,6 @@ exports.token =(req,res) => {
                 status: true
             });
         }
-      });
-   
+    });
+
 };

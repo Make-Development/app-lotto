@@ -9,8 +9,13 @@ module.exports = function (app) {
             "Access-Control-Allow-Headers",
             "Origin, Content-Type, Accept"
         );
+        
         next();
     });
+
+   
+
+    app.get("/api/profile", profile.load);
 
     
 

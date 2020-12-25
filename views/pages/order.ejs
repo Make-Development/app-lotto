@@ -1,30 +1,49 @@
 <html>
 <%- include('../master/head'); %>
 
-    <body class="body__profile">
+    <body class="body__order">
         <div class="se-pre-con"></div>
         <div class="card lt-profile border-0">
             <div class="lt-profile__head px-3 pt-4" style=" z-index: 10;">
                 <div class="lt-profile__head--left px-2" data-back="true">
                     <i class="fa fa-chevron-left "></i>
-                    <small class="ml-3">  Order</small>
+                    <small class="ml-3"> Order</small>
                 </div>
             </div>
             <div class="lt-profile__head center">
                 <div>
-                    <h4>250</h4>
+                    <h4>100</h4>
                     <small>Credit</small>
                 </div>
             </div>
-            <div class="lt-profile__banner">
-                <div class="pin-code" data-pin-bind="true">
+            <div class="lt-order__banner">
+                <div class="lt-order__banner--group">
+                    <input type="number" value="253">
+                    <button type="button">Go</button>
                 </div>
-                <label>
-                    _ _ _ _ _ _ _ _
-                </label>
+               
+                <!-- <label class="text-center">
+                    <h4>250 </h4>
+                </label> -->
             </div>
-            <div class="lt-profile__body ">
-             
+            <div class="lt-order__body ">
+                <div class="lt-order px-5">
+                    <form class="lt-validate__form mt-3" autocomplete="off">
+                        <div class="lt-order__input lt-validate__input" data-validate="Enter Phone">
+                            <input class="lt-input" type="number" name="onbotton" />
+                            <span class="lt-focus" data-placeholder="ตัวล่าง"></span>
+                        </div>
+                        <div class="lt-order__input lt-validate__input" data-validate="Enter Password">
+                            <input class="lt-input" type="number" name="ontop" />
+                            <span class="lt-focus" data-placeholder="ตัวบน"></span>
+                        </div>
+                        <div class="lt-order__input lt-validate__input" data-validate="Enter Password">
+                            <input class="lt-input" type="number" name="onswap" />
+                            <span class="lt-focus" data-placeholder="โต๊ด"></span>
+                        </div>
+                        
+                    </form>
+                </div>
             </div>
         </div>
 
